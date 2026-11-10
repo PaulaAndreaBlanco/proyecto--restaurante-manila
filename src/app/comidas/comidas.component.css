@@ -92,7 +92,7 @@
 
 .busqueda input {
     box-sizing: border-box;
-    width: 400px;
+    width: 100%;
     border: 1px solid #56a587;
     border-radius: 20px;
     color: #333;
