@@ -1,0 +1,28 @@
+.formulario-manila .card {
+    background-color: #f2f9f7;
+    border: 1px solid #dce9df;
+    border-radius: 16px;
+}
+
+.formulario-manila h2 {
+    color: #174c3c;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+}
+
+.formulario-manila .form-control {
+    border-color: #a8c9bb;
+    border-radius: 10px;
+}
+
+.btn-manila {
+    background-color: #1f6752;
+    border-color: #1f6752;
+    color: white;
+}
+
+.btn-manila:hover {
+    background-color: #174c3c;
+    border-color: #174c3c;
+    color: white;
+}

@@ -1,0 +1,132 @@
+.encabezado {
+    background-color: #cee5de;
+    padding-bottom: 50px;
+}
+
+.titulo1 {
+    color: #174c3c;
+    font-size: 45px;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 20px;
+    margin-bottom: 20px;
+    font-family: "Times New Roman", Times, serif;
+    letter-spacing: 2px;
+}
+
+.parrafo {
+    text-align: center;
+    margin-left: 120px;
+    margin-right: 120px;
+}
+
+p {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 1px;
+    color: black;
+}
+
+.resumen-pedido {
+    max-width: 600px;
+    margin: auto;
+    padding: 24px;
+    margin-bottom: 20px;
+    background-color: #f2f9f7;
+    border-left: 8px solid #03240b;
+    border-radius: 16px;
+}
+
+.resumen-pedido h2 {
+    font-weight: bold;
+    text-align: center;
+    color: #174c3c;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.producto-resumen,
+.total-pedido {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 10px 0;
+}
+
+.total-pedido {
+    color: #174c3c;
+    font-size: 1.15rem;
+}
+
+.btn-manila {
+    width: 100%;
+    margin-top: 18px;
+    padding: 12px;
+    background-color: #1f6752;
+    color: white;
+    border: none;
+    border-radius: 8px;
+}
+
+.btn-manila:hover {
+    background-color: #174c3c;
+}
+
+.tabla-pedido {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+}
+
+.tabla-pedido th,
+.tabla-pedido td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #d5dfda;
+    text-align: left;
+}
+
+.tabla-pedido th {
+    color: #174c3c;
+    background-color: #e4f1ec;
+    font-weight: 700;
+}
+
+.tabla-pedido th:nth-child(2),
+.tabla-pedido td:nth-child(2) {
+    text-align: center;
+}
+
+.tabla-pedido th:last-child,
+.tabla-pedido td:last-child {
+    text-align: right;
+}
+
+.total-pedido {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 20px;
+    color: #174c3c;
+    font-size: 1.15rem;
+}
+
+.btn-quitar {
+    padding: 6px 12px;
+    border: 1px solid #b94a48;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #a83232;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-quitar:hover {
+    background-color: #a83232;
+    color: #fff;
+}
+
+.btn-quitar:focus-visible {
+    outline: 3px solid #e6a2a2;
+    outline-offset: 2px;
+}

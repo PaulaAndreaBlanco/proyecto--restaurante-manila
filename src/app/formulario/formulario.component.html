@@ -1,0 +1,38 @@
+<section class="formulario-manila container my-5">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-9 col-lg-7">
+            <div class="card shadow-sm">
+                <div class="card-body p-4 p-md-5">
+                    <h2 class="text-center mb-2">Datos de entrega</h2>
+                    <p class="text-center text-muted mb-4">
+                        Llena este formulario para finalizar tu pedido.
+                    </p>
+
+                    <form #pedidoForm="ngForm" (ngSubmit)="realizarPedido()">
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">👤 Nombre Completo</label>
+                            <input type="text" class="form-control" id="nombre" name="nombreCompleto"
+                                placeholder="Tu nombre" [(ngModel)]="cliente.nombreCompleto" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="celular" class="form-label">📱 Celular</label>
+                            <input type="celular" class="form-control" id="celular" name="celular"
+                                placeholder="300719993" [(ngModel)]="cliente.celular" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="correo" class="form-label">📍Dirección</label>
+                            <input type="direccion" class="form-control" id="direccion" name="direccion"
+                                placeholder="Calle 3 # 45-16" [(ngModel)]="cliente.direccion" required>
+                        </div>
+
+                        <button type="submit" class="btn btn-manila w-100">
+                            Realizar pedido y descargar pdf
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

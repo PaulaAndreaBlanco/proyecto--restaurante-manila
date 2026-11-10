@@ -1,0 +1,31 @@
+<h1 class="titulo1">Encuentra los platos</h1>
+
+<div class="parrafo">
+    <p>
+        ¡Gira las tarjetas del tablero 4×4! Encuentra la comida y la bebida
+        estrella de Manila para ganar.
+    </p>
+</div>
+
+<p class="mensaje-juego" *ngIf="mensaje" aria-live="polite">
+    {{ mensaje }}
+</p>
+<section class="juego-manila">
+
+    <div class="tablero-juego" aria-label="Tablero de 16 tarjetas">
+        <button *ngFor="let tarjeta of tarjetas; let i = index" type="button" class="tarjeta-juego"
+            [class.revelada]="tarjeta.revelada" [class.encontrada]="tarjeta.encontrada"
+            [attr.aria-label]="'Tarjeta ' + (i + 1)" (click)="voltear(tarjeta)">
+            <ng-container *ngIf="tarjeta.revelada; else reverso">
+                <img *ngIf="tarjeta.imagen; else tarjetaVacia" [src]="tarjeta.imagen" [alt]="tarjeta.tipo">
+
+                <ng-template #tarjetaVacia>
+                    <span class="equis">✕</span>
+                </ng-template>
+            </ng-container>
+
+            <ng-template #reverso>?</ng-template>
+        </button>
+    </div>
+
+</section>

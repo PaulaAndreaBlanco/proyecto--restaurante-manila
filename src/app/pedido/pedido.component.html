@@ -1,0 +1,63 @@
+<section class="encabezado">
+    <section>
+        <h1 class="titulo1">Realiza tu pedido</h1>
+
+        <div class="parrafo">
+            <p>Elige tus platos y bebidas favoritas, indica las cantidades y completa tus datos. Prepararemos tu pedido
+                con
+                mucho
+                cuidado para que disfrutes el sabor de Manila donde quieras.</p>
+        </div>
+        <app-formulario></app-formulario>
+
+
+        <section class="resumen-pedido">
+            <h2>Resumen de tu pedido</h2>
+            <table class="tabla-pedido">
+                <thead>
+                    <tr>
+                        <th>Nombre del producto</th>
+                        <th>Cantidad</th>
+                        <th>Total producto</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <ng-container *ngFor="let item of pedidoService.listaPedido(); let i = index">
+                        <tr *ngIf="item.comida">
+                            <td>{{ item.comida.nombre }}</td>
+                            <td>{{ item.cantidadComida }}</td>
+                            <td>${{ item.totalComida | number }}</td>
+                            <td>
+                                <button type="button" class="btn-quitar" (click)="pedidoService.quitarItem(i)">
+                                    Quitar
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr *ngIf="item.bebida">
+                            <td>{{ item.bebida.nombre }}</td>
+                            <td>{{ item.cantidadBebida }}</td>
+                            <td>${{ item.totalBebida | number }}</td>
+                            <td>
+                                <button type="button" class="btn-quitar" (click)="pedidoService.quitarItem(i)">
+                                    Quitar
+                                </button>
+                            </td>
+                        </tr>
+                    </ng-container>
+                </tbody>
+            </table>
+            <hr>
+
+
+            <hr>
+
+            <div class="total-pedido">
+                <span>Total a pagar</span>
+                <strong>${{ pedidoService.totalPedido() | number }}</strong>
+            </div>
+        </section>
+
+    </section>
+</section>

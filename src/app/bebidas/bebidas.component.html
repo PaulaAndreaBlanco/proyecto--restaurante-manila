@@ -1,0 +1,143 @@
+<section class="bienvenida">
+
+
+    <h1 class="titulo1">Nuestro menú de bebidas</h1>
+
+    <p class="eslogan">
+        Aquí encontrarás bebidas para acompañar cada momento. Explora nuestras opciones, descubre sus sabores e
+        ingredientes, y elige tus favoritas.
+        <b>Desde alternativas refrescantes hasta bebidas llenas de sabor, hay algo para cada antojo. </b> ¡Esperamos
+        que
+        encuentres la ideal para ti!
+    </p>
+</section>
+
+<section class="busqueda">
+
+    <div class="busqueda-texto">
+        <span class="icono-comida">🥛</span>
+        <h2>Encuentra algo delicioso</h2>
+        <p>Busca tus favoritos o explora los sabores de Manila.</p>
+    </div>
+
+    <form class="d-flex" role="search">
+        <div>
+            <p class="parrafo2">🔍 Por nombre</p>
+            <input class="form-control me-2" type="search" placeholder="Eje. beer " aria-label="Buscar"
+                [(ngModel)]="nombreBuscar" name="nombreBuscar">
+            <button class="btn btn-outline-success" type="button" (click)="bebidaNombre()">Buscar</button>
+        </div>
+        <div>
+            <p class="parrafo2">🍓Por ingrediente</p>
+            <input class="form-control me-2" type="search" placeholder="Eje. coffee" aria-label="Buscar"
+                [(ngModel)]="ingredienteBuscar" name="ingredienteBuscar">
+            <button class="btn btn-outline-success" type="button" (click)="bebidaIngrediente()">Buscar</button>
+        </div>
+
+        <div><label class="label" for="tipo-bebida">Por tipo</label>
+            <select class="form-select me-2" aria-label="Filtrar búsqueda" [(ngModel)]="alcohol_no" name="alcohol_no"
+                (change)="bebidaAlcohol()">
+                <option value="" disabled>Seleccione...</option>
+                <option value="Alcoholic">Alcohólica</option>
+                <option value="Non_Alcoholic">Sin Alcohol</option>
+            </select>
+        </div>
+
+        <div><label class="label" for="tipo-bebida">Por categoría</label>
+            <select class="form-select me-2" aria-label="Filtrar búsqueda" [(ngModel)]="categoria" name="categoria"
+                (change)="bebidaCategoria()">
+                <option value="" disabled>Seleccione...</option>
+                <option value="Ordinary_Drink">Bebida ordinaria</option>
+                <option value="Cocktail">Coctel</option>
+            </select>
+        </div>
+    </form>
+
+
+
+</section>
+
+<section class="categorias1">
+    <h2 class="categorias">Explora nuestros sabores</h2>
+
+
+    <div id="demo" class="carousel slide mi-carrusel" data-bs-ride="false">
+
+        <!-- Indicadores -->
+        <div class="carousel-indicators">
+            <button *ngFor="let grupo of gruposCategorias; let i = index" type="button" data-bs-target="#demo"
+                [attr.data-bs-slide-to]="i" [class.active]="i === 0" [attr.aria-current]="i === 0 ? 'true' : null"
+                [attr.aria-label]="'Grupo ' + (i + 1)">
+            </button>
+        </div>
+
+        <div class="carousel-inner">
+            <div class="carousel-item" *ngFor="let grupo of gruposCategorias; let i = index" [class.active]="i === 0">
+
+                <div class="grupo-categorias">
+                    <div class="tarjeta-categoria" *ngFor="let categoria of grupo">
+                        <h4>{{ categoria.strCategory }}</h4>
+
+                        <img [src]="categoria.imagen" [alt]="'Comidas de ' + categoria.strCategory">
+
+                        <button type="button" (click)="filtrarPorCategoria(categoria.strCategory)">
+                            Ver bebidas
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Flechas -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev"
+            aria-label="Grupo anterior">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+
+        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next"
+            aria-label="Grupo siguiente">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+</section>
+
+
+<section class="platos">
+    <h2>Delicias para descubrir</h2>
+    <div class="lista-plato">
+        <div class="tarjeta-plato" *ngFor="let bebida of listaNombre">
+            <h3>
+                {{bebida.nombre}}
+
+            </h3>
+
+            <div class="contenido-plato">
+                <img [src]="bebida.imagen" [alt]="bebida.imagen">
+
+                <details (toggle)="cargarIngredientes(bebida, $event)" class="ingredientes">
+                    <summary>Ingredientes</summary>
+                    <ul>
+                        <li *ngFor="let ingrediente of bebida.ingredientes">
+                            {{ ingrediente }}
+                        </li>
+
+                    </ul>
+                </details>
+
+                <p class="precio">Precio: $ {{bebida.precio | number}}</p>
+                <div class="controles">
+
+                    <input id="cantidad" type="number" min="1" value="1" class="input-cantidad"
+                        [(ngModel)]="bebida.cantidadSeleccionada">
+                    <button type="button" (click)="elegirBebida(bebida)">{{
+                        productoAgregadoId === bebida.idDrink
+                        ? 'Producto agregado'
+                        : 'Elegir plato'
+                        }}</button>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
