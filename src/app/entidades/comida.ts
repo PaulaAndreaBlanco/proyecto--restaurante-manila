@@ -6,4 +6,5 @@ export class Comida {
     idMeal: string = '';
     detalleCargado: boolean = false;
     categoria: string = "";
+    cantidadIngredientes: number = 0;
 }

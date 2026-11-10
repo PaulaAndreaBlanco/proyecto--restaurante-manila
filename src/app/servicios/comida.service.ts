@@ -77,4 +77,21 @@ export class ComidaService {
       .then(response => response.json())
       .then(data => data.meals ?? []);
   }
+
+  cantidadIngredientes(comida: any): number {
+
+    let cantidad = 0;
+
+    for (let i = 1; i <= 20; i++) {
+
+      const ingrediente = comida['strIngredient' + i];
+
+      if (ingrediente && ingrediente.trim() !== '') {
+        cantidad++;
+      }
+
+    }
+
+    return cantidad;
+  }
 }

@@ -186,6 +186,8 @@ export class ComidasComponent implements OnInit {
           if (ingrediente) {
             comida.ingredientes.push(ingrediente);
           }
+
+          comida.cantidadIngredientes = comida.ingredientes.length;
         }
 
         comida.detalleCargado = true;
