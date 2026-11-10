@@ -1,4 +1,4 @@
-# 🍜 Restaurante Manila
+# Restaurante Manila
 
 ## Descripción del proyecto
 
@@ -27,7 +27,6 @@ Presenta información general del Restaurante Manila, incluyendo:
 
 - Presentación del restaurante.
 - Carrusel de imágenes.
-- Información sobre el establecimiento.
 - Descripción de los servicios ofrecidos.
 - Presentación del plato estrella.
 - Presentación de la bebida estrella.
@@ -52,10 +51,9 @@ Permite consultar las bebidas disponibles en el restaurante.
 Incluye:
 
 - Visualización de bebidas mediante el consumo de una API.
-- Presentación de las características de cada bebida.
+- Presentación de los ingredientes de cada bebida.
 - Búsqueda de bebidas por nombre.
-- Consulta de información de las bebidas disponibles.
-
+  
 ### 4. Módulo de pedidos
 
 Permite seleccionar diferentes comidas y bebidas para construir un pedido.
@@ -86,18 +84,15 @@ Incluye una sección interactiva de entretenimiento dentro de la aplicación.
 
 El proyecto utiliza las siguientes tecnologías y herramientas:
 
-| Tecnología | Descripción |
-|---|---|
-| Angular 17 | Framework utilizado para desarrollar la aplicación web. |
-| TypeScript | Lenguaje de programación utilizado para implementar la lógica de la aplicación. |
-| HTML5 | Lenguaje utilizado para estructurar el contenido. |
-| CSS3 | Utilizado para diseñar y personalizar la interfaz. |
-| Bootstrap | Framework utilizado para facilitar el diseño y la adaptación de la interfaz. |
-| JavaScript | Lenguaje utilizado en funcionalidades de desarrollo web. |
-| APIs REST | Servicios utilizados para obtener información de comidas y bebidas. |
-| Git | Sistema de control de versiones. |
-| GitHub | Plataforma para almacenar y gestionar el código fuente. |
-| Vercel | Plataforma prevista para el despliegue de la aplicación. |
+Angular 17 = Framework utilizado para desarrollar la aplicación web. 
+TypeScript = Lenguaje de programación utilizado para implementar la lógica de la aplicación. 
+HTML5 = Lenguaje utilizado para estructurar el contenido. 
+CSS3 = Utilizado para diseñar y personalizar la interfaz.
+Bootstrap = Framework utilizado para facilitar el diseño y la adaptación de la interfaz. 
+APIs REST = Servicios utilizados para obtener información de comidas y bebidas. 
+Git = Sistema de control de versiones. 
+GitHub = Plataforma para almacenar y gestionar el código fuente. 
+Vercel = Plataforma prevista para el despliegue de la aplicación. 
 
 ## Requisitos previos
 
@@ -179,46 +174,9 @@ Los archivos generados se almacenan en la carpeta de salida configurada en `angu
 
 ## Estructura general del proyecto
 
-La aplicación está organizada mediante componentes, servicios, modelos y archivos de configuración.
+La aplicación está organizada mediante componentes, servicios y archivos de configuración.
 
-Una estructura general de referencia es la siguiente:
 
-```text
-restaurante-manila/
-│
-├── public/
-│
-├── src/
-│   ├── app/
-│   │   ├── bebidas/
-│   │   ├── comidas/
-│   │   ├── entidades/
-│   │   ├── footer/
-│   │   ├── formulario/
-│   │   ├── inicio/
-│   │   ├── juego/
-│   │   ├── navegacion/
-│   │   ├── pedido/
-│   │   │
-│   │   ├── servicios/
-│   │   ├── modelos/
-│   │   ├── app.component.ts
-│   │   ├── app.component.html
-│   │   └── app.routes.ts
-│   │
-│   ├── assets/
-│   │
-│   ├── index.html
-│   └── styles.css
-│
-├── angular.json
-├── package.json
-├── package-lock.json
-├── tsconfig.json
-└── README.md
-```
-
-**Nota:** La estructura es ilustrativa. Los nombres y directorios deben ajustarse a la organización real del proyecto.
 
 ## Consumo de servicios API
 
@@ -235,10 +193,4 @@ Entre las operaciones implementadas se contemplan:
 
 La comunicación con los servicios se realiza mediante solicitudes HTTP, utilizando los mecanismos de consumo de APIs proporcionados por Angular.
 
-## Despliegue de la aplicación
 
-El proyecto está previsto para publicarse mediante **Vercel**, utilizando GitHub como repositorio del código fuente.
-
-Los pasos generales para realizar el despliegue son:
-
-1. Sub
