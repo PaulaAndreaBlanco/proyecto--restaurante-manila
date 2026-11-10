@@ -91,7 +91,7 @@
                 <img [src]="comida.imagen" [alt]="comida.imagen">
 
                 <details (toggle)="cargarIngredientes(comida, $event)" class="ingredientes">
-                    <summary>Ingredientes ({{ comida.ingredientes.length }})</summary>
+                    <summary>Ingredientes {{ comida.ingredientes.length }}</summary>
                     <ul>
                         <li *ngFor="let ingrediente of comida.ingredientes">
                             {{ ingrediente }}
