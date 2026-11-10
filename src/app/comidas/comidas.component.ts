@@ -188,8 +188,6 @@ export class ComidasComponent implements OnInit {
           }
         }
 
-        comida.cantidadIngredientes = comida.ingredientes.length;
-
         comida.detalleCargado = true;
       })
       .catch(error => console.error('Error al cargar ingredientes:', error));
